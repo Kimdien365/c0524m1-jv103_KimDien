@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo Form Cơ Bản</title>
+</head>
+<body>
+<form method="get" action="simpleform.html">
+    <h2> Order Form</h2>
+    <h3>What would you like to buy?</h3>
+<select> <!--Thẻ Select / option hộp thoại xổ ra để lựa chọn 1-->
+    <option>A</option>
+    <option>B (+ 0.05$)</option>
+    <option>C (+ 0.05$)</option>
+</select>
+    <h3> How many would you like to order?</h3>
+    <p>
+        <input type="radio" name="money">1-10$<br> <!--Thuộc tính Radio của Type dùng để lựa chọn 1 lựa chọn duy nhất-->
+        <input type="radio" name="money">2-20$<br>
+        <input type="radio" name="money">3-25$
+    </p>
+    <h3>Name<sup style="color:crimson;">*</sup></h3>
+    <p>
+        <input type="text" name="firtname" placeholder="First name" size="20px" required> <!--Thuộc tính text của Type: thông tin dạng Text, required để quy định trường bắt buộc phải nhập-->
+        <input type="text" name="lastname" placeholder="Last name" size="20px" required><!--Thuộc tính Placeholder dùng để hiển thị chữ mờ khi nhập Text-->
+    </p>
+    <h3> Email</h3>
+    <p>
+        <input type="email" name="email" size="45px"><!--Thuộc tính email của Type dùng để nhâ email, size quy định độ dài ô nhập-->
+    </p>
+    <h3> Phone Number</h3>
+    <p>
+    <input type="number" name="number1"> -<!--Thuộc tính number của Type quy định nhập số-->
+    <input type="number" name="number2"> -
+    <input type="number" name="number3"><br><br>
+    <input type="submit" name="submit" value="submit"><!--Thuộc tính submit của Type để hoàn tất và gửi dữ liệu, value là tên của nút gửi-->
+    </p>
+</form>
+</body>
+</html>
