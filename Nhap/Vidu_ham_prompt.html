@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm Prompt Cơ Bản</title>
+</head>
+<body>
+<h2> Ví dụ về hàm Prompt</h2>
+<div id="vd_ham_prompt"></div>
+<div id="namsinh"></div>
+<button onclick="vd_prompt()">Click</button>
+<script>
+    function vd_prompt(){
+    var hovaten = prompt("Hãy nhập tên của bạn");/*Lưu ý chữ in hoa và chữ thường, dấu mở và đóng ngoặc*/
+         document.getElementById("vd_ham_prompt").innerHTML="Tôi Tên Là: " + hovaten;
+    let namsinh = prompt("Hãy nhập ngày tháng năm sinh của bạn")
+        document.getElementById("namsinh").innerHTML="Ngày Sinh: " + namsinh;
+    alert("Cảm ơn")
+    }
+</script>
+<br><br><br>
+<!--Bắt sự kiện kiểu ondblclick: Kích hoạt khi người dùng nhấp đúp vào phần tử.-->
+<div id="ondblclick"></div>
+<button ondblclick="vd_ondblclick()">Nhấp đúp</button>
+<script>
+    function vd_ondblclick(){
+        prompt("Điền chữ ondblclick vào đây")
+        document.getElementById("ondblclick").innerHTML="Thank you!"
+    }
+</script>
+<br><br><br>
+<!--Bắt sự kiện kiểu onmouseover: Kích hoạt khi con trỏ chuột di chuyển vào phần tử.-->
+<h2 id="vd_onmouseover"></h2>
+<a id="vd_onmouseover2" href="https://www.google.com.vn/" alt="box"> đi đến liên kết</a>
+<img src="https://pixelsbyumair.files.wordpress.com/2014/12/cssgif.gif" onclick="aa()">
+<script>
+    function aa(){
+        document.getElementById("vd_onmouseover2").src="https://www.google.com.vn/";
+    }
+</script>
+</body>
+</html>

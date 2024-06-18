@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Các Hàm Xuất Dữ Liệu</title>
+</head>
+<body>
+<!--Hàm console.log(), Hàm ducument.write(), Hàm innetHTML hiển thị nội dung lồng vào 1 thẻ HTML có ID duoc gọi tên-->
+<p><b>Hàm các kiểu</b></p>
+<p id="Lophoc"></p>
+<br>
+<p id="Lophoc2"></p>
+<script>
+    <!--Hàm console.log(): Hiển thị ở tab console trên website-->
+    let name=prompt("Nhập tên");
+    console.log("Console.log: " + name);
+    /*Hàm document.write() Hiển thị nội dung lên trang wep*/
+    let hovaten=prompt("Nhập họ và tên của bạn");
+    document.write("Document.write: ", name, hovaten)
+    /*Hàm innerHTML và innerText : hiển thị nội dung lồng vào 1 thẻ HTML có ID duoc gọi tên*/
+    document.getElementById("Lophoc").innerHTML="InnerHTML: <b>Lớp 10A9</b> Tên đầy đủ là: " + hovaten;
+    document.getElementById("Lophoc2").innerText="InnerText: <b>Lớp 10A9</b> Tên đầy đủ là: " + hovaten;
+</script>
+</body>
+</html>

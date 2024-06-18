@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng Dụng Máy Tính Cơ Bản</title>
+</head>
+<body>
+<form>
+    <input id="input_a" type="number" style="width: 100px;">
+    <input id="input_b" type="number" style="width: 100px;">
+<br><br>
+    <button type="button" onclick="phep_cong()">Addition(+)</button>
+    <button type="button" onclick="phep_tru()">Subtraction(-)</button>
+    <button type="button" onclick="phep_nhan()">Multiplication(X)</button>
+    <button type="button" onclick="phep_chia()">Division(/)</button>
+</form>
+<br>
+<p id="HT_result"></p>
+<script>
+    function phep_cong(){
+        let so_a = +document.getElementById("input_a").value;
+        let so_b = +document.getElementById("input_b").value;
+        let result;
+            result= so_a + so_b;
+        document.getElementById("HT_result").innerHTML="Result Addition: " + result;
+    }
+    function phep_tru(){
+        let so_a = +document.getElementById("input_a").value;
+        let so_b = +document.getElementById("input_b").value;
+        let result;
+            result= so_a - so_b;
+        document.getElementById("HT_result").innerHTML="Result Subtraction: " + result;
+    }
+    function phep_nhan(){
+        let so_a = +document.getElementById("input_a").value;
+        let so_b = +document.getElementById("input_b").value;
+        let result;
+            result= so_a * so_b;
+        document.getElementById("HT_result").innerHTML="Result Subtraction: " + result;
+    }
+    function phep_chia(){
+        let so_a = +document.getElementById("input_a").value;
+        let so_b = +document.getElementById("input_b").value;
+        let result;
+            result= so_a / so_b;
+        document.getElementById("HT_result").innerHTML="Result Subtraction: " + result;
+    }
+</script>
+</body>
+</html>

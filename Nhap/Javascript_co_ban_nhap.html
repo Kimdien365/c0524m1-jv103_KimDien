@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Các Lệnh Javascript Cơ Bản</title>
+</head>
+<body>
+<!--1. Nhúng JS vào HTML-->
+<!--a. Inline (Nhúng trực tiếp)-->
+<button onclick="alert('Thông báo: Bạn có chắc muốn đi tiếp')">Click me!</button><!--Khi nút nhấn được bật, xuất hiện thông báo...-->
+<!--2. Tạo thẻ Script trực tiếp trên file html-->
+<h2 id="m"></h2>
+<script>
+    document.getElementById("m").innerText="Thật sự hết tiền"
+</script>
+
+<!--3. Tạo file javascript và gọi tên với thuộc tính src-->
+<br>
+<button onclick="a()">On Click a</button><!--Tạo ta 1 mút nhấn là Click me!, khi click sẽ gọi hàm a()-->
+<br>
+<h2 id="b"></h2> <!--Thẻ h2 có id=b-->
+<br>
+<!--4. Các Hàm Hiển Thị Thông Báo-->
+<!--a. Hàm Frompt() : Hiển thị hộp thoại kèm 1 ô nhập dữ liệu-->
+<h2 id="mmm"></h2> <!--Thẻ thực thi hiển thị khi id mmm được gọi-->
+<button onclick="c()">Đặt Tên</button> <!--Bắt sự kiện click chuột vào nút nhấn Đặt tên thì hàm c() thực thi-->
+<script>
+    function c(){ /*Định nghĩa hàm c()*/
+        var hovaten = prompt("Nhập tên của bạn vào đây"); /*Hàm c() tạo ra 1 biến hovaten sẽ thông báo 1 hộp thoại và yêu cầu nhập dữ liệu*/
+       alert("bạn chắc chứ " + hovaten)/*Thông báo 1 thông điệp nào đó*/
+        confirm("bạn chắc chắn bạn tên là " + hovaten) /*Xác nhận một thông điệp nào đó*/
+        document.getElementById("mmm").innerHTML="Xin Chào: " + hovaten; /*Sau khi nhập dữ liệu thì gọi id mmm và thực thi hiểm thị Xin chào ...*/
+    }
+</script>
+
+<script src="demo_js.js"> /*Hàm javascript có nguồn là demo_js.js*/
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Biến kiểu dữ liệu và toán tử</title>
+</head>
+<body>
+<h2>Bài tập 1 : Điểm của sinh viên:</h2>
+<br>
+<script>
+    let Svatly = prompt("Nhập điểm môn vật lý");
+        let vatly = parseInt(Svatly); /*Chuyển điểm môn vật lý thành dạng số*/
+            document.write("Vật Lý: " + vatly);
+            document.write("<br/>");
+    let Stoanhoc = prompt("Nhập điểm môn toán học");
+         let toanhoc = parseInt(Stoanhoc); /*Chuyển điểm môn toán học thành dạng số*/
+            document.write("Toán Hoặc: " + toanhoc);
+            document.write("<br/>");
+    let Ssinhhoc = prompt("Nhập điểm môn sinh học");
+        let sinhhoc = parseInt(Ssinhhoc); /*Chuyển điểm môn sinh học thành dạng số*/
+            document.write("Sinh Học: " + sinhhoc);
+            document.write("<br/>");
+    let trungbinh =( vatly + toanhoc + sinhhoc ) / 3;
+            document.write("<b>Điểm Trung Bình: </b>" + trungbinh);
+            document.write("<br/>");
+    let tong = vatly + toanhoc + sinhhoc;
+            document.write("<b>Điểm Tổng: </b>" + tong);
+    document.write("<br/>");
+/*<h2>Bài tập 2: Chuyển đổi nhiệt độ</h2>*/
+    document.write("<h2>Bài tập 2: Chuyển đổi nhiệt độ</h2>");
+    let Sdoc = prompt("Nhập giá trị độ C");
+    let C = parseInt(Sdoc);
+    let F = 9 * C / 5 + 32;
+    document.write(C + " <sup>o</sup> C = ");
+    document.write(F + " <sup>o</sup> F");
+    document.write("<br/>");
+/*Bài 3: Viết chương trình tính diện tích hình tròn*/
+    document.write("<h2>Bài tập 3: Chương trình tính diện tích hình tròn</h2>");
+    let bankinh = prompt("Nhập bán kính hình tròn");
+        let R = parseInt(bankinh);
+    let dientich = R * R * 3.14159265359;
+    document.write("Bán kính hình tròn là (m): " + R);
+    document.write("<br/>");
+    document.write("Diện tích hình tròn là (m<sup>2</sup>): " + dientich);
+    document.write("<br/>");
+/*Bài 4: Viết chương trình tính chu vi hình tròn*/
+    document.write("<h2>Bài tập 3: Chương trình tính diện tích hình tròn</h2>");
+    let chuvi = R * 2 * 3.14159265359;
+    document.write("Chu vi hình tròn là (m): " + chuvi);
+</script>
+</body>
+</html>
