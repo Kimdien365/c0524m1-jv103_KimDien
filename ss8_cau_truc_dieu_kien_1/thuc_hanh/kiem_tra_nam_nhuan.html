@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm Tra Năm Nhuận</title>
+</head>
+<body>
+<script>
+    let year = +prompt("Nhập năm để kiểm tra:");
+    if(year % 4 === 0 && year % 100 !== 0){
+        alert("Năm Nhuận");
+    } else if ( year % 100 === 0 && year % 400 !== 0) {
+        alert("Không Phải Năm Nhuận");
+    } else if ( year % 100 === 0 && year % 400 === 0) {
+        alert("Năm Nhuận");
+    } else {
+        alert("Không Phải Năm Nhuận")
+    }
+</script>
+</body>
+</html>

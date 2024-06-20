@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng Dụng Máy Tính Mở Rộng</title>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <td colspan="4">
+            <input type="text" id="window" style="width: 210px">
+        </td>
+    </tr>
+    <tr>
+        <td style="width: 50px"><button type="button" style="width:50px;" onclick="nhapso(1)">1</button></td> <!--onclick="nhapso(1): nghĩa là khi bấm ... sẽ hiển thị số 1-->
+        <td style="width: 50px"><button type="button" style="width:50px;" onclick="nhapso(2)">2</button></td>
+        <td style="width: 50px"><button type="button" style="width:50px;" onclick="nhapso(3)">3</button></td>
+        <td style="width: 50px"><button type="button" style="width:50px;" onclick="nhapso('+')">+</button></td>
+    </tr>
+    <tr>
+        <td style="width: 50px"><button type="button" style="width:50px;" onclick="nhapso(4)">4</button></td>
+        <td style="width: 50px"><button type="button" style="width:50px;" onclick="nhapso(5)">5</button></td>
+        <td style="width: 50px"><button type="button" style="width:50px;" onclick="nhapso(6)">6</button></td>
+        <td style="width: 50px"><button type="button" style="width:50px;" onclick="nhapso('-')">-</button></td>
+    </tr>
+    <tr>
+        <td style="width: 50px"><button type="button" style="width:50px;" onclick="nhapso(7)">7</button></td>
+        <td style="width: 50px"><button type="button" style="width:50px;" onclick="nhapso(8)">8</button></td>
+        <td style="width: 50px"><button type="button" style="width:50px;" onclick="nhapso(9)">9</button></td>
+        <td style="width: 50px"><button type="button" style="width:50px;" onclick="nhapso('*')">x</button></td>
+    </tr>
+    <tr>
+        <td style="width: 50px"><button type="button" style="width:50px;" onclick="xoa()">C</button></td>
+        <td style="width: 50px"><button type="button" style="width:50px;" onclick="nhapso(0)">0</button></td>
+        <td style="width: 50px"><button type="button" style="width:50px;" onclick="bang()">=</button></td>
+        <td style="width: 50px"><button type="button" style="width:50px;" onclick="nhapso('/')">/</button></td>
+    </tr>
+</table>
+<script>
+let number = document.getElementById("window"); /*Gán biến number vào giá trị nhận được trong ô có id là window, Không có phần gán giá trị .value tại biến number, giá trị biến number sẽ được gán vào hàm nhapso()*/
+function nhapso(kytu) {
+    number.value += kytu; /*lấy giá trị của biến number để gán vào hàm nhập số với giá trị là kytu, dấu cộng trước dấu bằng để số tiếp theo không ghi đè lên số phía trước */
+}
+function xoa() {
+    number.value = ""; /*gán giá trị rỗng vào biến number và bỏ đi dấu cộng để ghi đè lên các giá trị còn lại*/
+}
+function bang() {
+    let stringByValue= document.getElementById("window").value; /*Gán giá trị của 1 chuỗi số trên màn hình thành biến stringByValue*/
+    let result = eval(stringByValue); /*Hàm eval dùng để gán kết quả phép tính trong chuỗi stringByValue vào biến result*/
+    number.value = result;
+}
+</script>
+</body>
+</html>

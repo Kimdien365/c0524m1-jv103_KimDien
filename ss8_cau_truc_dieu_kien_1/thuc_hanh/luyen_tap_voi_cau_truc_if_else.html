@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện Tập Với Cấu Trúc If Else</title>
+</head>
+<body>
+<!--<script>-->
+<!--let nameJavaScript = prompt("What is the “official” name of JavaScript?");-->
+<!--if( nameJavaScript == "ECMAScript"){-->
+<!--    alert("Right!")-->
+<!--} else {-->
+<!--    alert("Didn’t know? ECMAScript!")-->
+<!--}-->
+<!--</script>-->
+<h2>What is the “official” name of JavaScript?</h2>
+<input type="text" id="inputNameJavaScript">
+<button type="button" onclick="sendName()"> Sent</button>
+<br>
+<h2 id="result"> Đáp án của bạn là: </h2>
+<script>
+    function sendName() {
+    let nameJavaScript = document.getElementById("inputNameJavaScript").value;
+    if(nameJavaScript == "ECMAScript"){
+        document.getElementById("result").innerText = "Đáp án của bạn là: Right!"
+    } else {
+        document.getElementById("result").innerText = "Đáp án của bạn là: Didn’t know? ECMAScript!";
+    }
+    }
+</script>
+</body>
+</html>
