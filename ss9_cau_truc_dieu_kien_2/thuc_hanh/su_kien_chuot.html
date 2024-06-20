@@ -5,8 +5,46 @@
     <title>Sự kiện chuột</title>
 </head>
 <body>
-<form>
-    <img src="Image\ball.jpg" alt="ball" style="width: 100px; height: 100px;">
+<!--<form>
+    <img id="myImage" src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png" alt="ball_img" style="width: 100px; height: 100px;"/>
+    <br>
+    <p>Click button below to move the image to right or left</p>
+    <button type="button" onclick="left()">Move Left</button>
+    <input type="button" value="move" onclick="moveRight();">
 </form>
+    <script>
+        let imgObj = null;
+        imgObj = document.getElementById('myImage');
+        function init() {
+            imgObj = document.getElementById('myImage');
+            imgObj.style.position = 'relative';
+            imgObj.style.left = '0px';
+        }
+        function moveRight() {
+            imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+        }
+        window.onload = init;
+    </script>-->
+<form>
+    <img src ="https://upload.wikimedia.org/wikipedia/commons/7/7a/Basketball.png" alt="ballImg" id = "ballImg" style="width: 200px; height: 200px;">
+        <br>
+    <p>Click button below to move the image to right or left</p>
+         <input type="button" value="moveLeft" onclick="moveL()">
+         <input type="button" value="moveRight" onclick="moveR()">
+</form>
+<script>
+    let saveBall = document.getElementById("ballImg");
+    function init () {
+        saveBall.style.position = "relative"; /*cài đặt vị trí ban đầu cho ball, relative là có thể điều chỉnh vị trí của Ball*/
+        saveBall.style.left = "0px"; /*Cài đặt vị trí ban đầu là 0px*/
+    }
+    function moveL() {
+        saveBall.style.left = parseInt(saveBall.style.left) + 10 + "px";
+    }
+    function moveR() {
+        saveBall.style.left = parseInt(saveBall.style.left) - 10 + "px";
+    }
+    window.onload = init;
+</script>
 </body>
 </html>

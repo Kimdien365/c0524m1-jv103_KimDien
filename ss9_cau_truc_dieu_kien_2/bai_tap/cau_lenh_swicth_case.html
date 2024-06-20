@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu Lệnh Switch Case</title>
+</head>
+<body>
+<form>
+    <input type="number" id="inputNgay" >
+    <button type="button" onclick="tinhNgay()">Tính Số Ngày</button>
+    <br>
+    <h2 id="soNgay"> Tháng ... có ... ngày </h2>
+</form>
+<script>
+    let thang = document.getElementById("inputNgay").value;
+
+    function tinhNgay() {
+        let thang = document.getElementById("inputNgay").value;
+        switch (thang) {
+            case "1":
+            case "3":
+            case "5":
+            case "7":
+            case "8":
+            case "10":
+            case "12":
+                document.getElementById("soNgay").innerText= "Tháng " + thang + ' có 31 ngày';
+                break;
+            case "4":
+            case "6":
+            case "9":
+            case "11":
+                document.getElementById("soNgay").innerText= "Tháng " + thang + ' có 30 ngày';
+                break;
+            case "2":
+                document.getElementById("soNgay").innerText= "Tháng " + thang + ' có 28 hoặc 29 ngày';
+                break;
+            default:
+                document.getElementById("soNgay").innerText= "Vui lòng nhập từ tháng 1 đến tháng 12";
+        }
+    }
+</script>
+</body>
+</html>
