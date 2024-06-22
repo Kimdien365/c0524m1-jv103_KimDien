@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xếp hạng học lực của học sinh</title>
+</head>
+<body>
+<script>
+    let diemKT = +prompt("Nhập điểm kiểm tra ở đây:");
+    let diemGK = +prompt("Nhập điểm thi giữa kỳ ở đây:");
+    let diemCK = +prompt("Nhập điểm thi cuối kỳ ở đây:");
+    let diemTB = (diemKT + diemGK + diemCK) / 3;
+    if (diemKT < 0 || diemGK < 0 || diemCK < 0) {
+        alert("Bạn nhập không chính xác, vui lòng nhập lại:");
+    } else if (diemTB < 6.5 && diemTB >= 0) {
+        alert("Học sinh xếp loại: Trung Bình");
+    } else if (diemTB < 8) {
+        alert("Học sinh xếp loại: Khá");
+    } else if (diemTB <= 10) {
+        alert("Học sinh xếp loại: Giỏi");
+    } else {
+        alert("Bạn nhập không chính xác");
+    }
+</script>
+</body>
+</html>

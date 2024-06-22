@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm số lớn nhất trong 3 số nguyên</title>
+</head>
+<body>
+<!--<form>
+    <h2>Nhập vào 3 số nguyên: A, B và C khác nhau: </h2>
+    <input type="number" id="inputNumberA">
+    <input type="number" id="inputNumberB">
+    <input type="number" id="inputNumberC">
+    <button type="button" onclick="tinh()">Tinh</button>
+    <p id="result"> Số lớn nhất là:</p>
+</form>-->
+<!--<script>
+    function tinh() {
+        let numberA = +document.getElementById("inputNumberA").value;
+        let numberB = +document.getElementById("inputNumberB").value;
+        let numberC = +document.getElementById("inputNumberC").value;
+        if (numberA >= numberB && numberA >= numberC) {
+            document.getElementById("result").innerText = numberA + " là số lớn nhất";
+        } else if (numberB >= numberA && numberB >= numberC) {
+            document.getElementById("result").innerText = numberB + " là số lớn nhất";
+        } else {
+            document.getElementById("result").innerText = numberC + " là số lớn nhất";
+        }
+    }
+</script>-->
+<form>
+    <h2>Nhập vào 3 số: A, B và C</h2>
+    <input type="number" id="inputA">
+    <input type="number" id="inputB">
+    <input type="number" id="inputC">
+    <button type="button" onclick="testMax()">Kiểm tra</button>
+    <p id="outputMax">Số lớn nhất là: </p>
+</form>
+<script>
+    function testMax() {
+        let A = +document.getElementById("inputA").value;
+        let B = +document.getElementById("inputB").value;
+        let C = +document.getElementById("inputC").value;
+        let maxNum;
+        maxNum = Math.max(A, B, C);
+        document.getElementById("outputMax").innerText = "Số lớn nhất là:" + maxNum;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính Cước Điện Thoại</title>
+</head>
+<body>
+<script>
+    let timeCall = +prompt("Nhập vào thời gian gọi (s)");
+    if (timeCall >= 600) {
+        alert('Thời gian gọi: ' + timeCall + ", Cước Điện Thoại Của Bạn là: " + 2000 * timeCall);
+    } else if (timeCall >= 300) {
+        alert('Thời gian gọi: ' + timeCall + ", Cước Điện Thoại Của Bạn là: " + 1500 * timeCall);
+    } else if (timeCall > 60) {
+        alert('Thời gian gọi: ' + timeCall + ", Cước Điện Thoại Của Bạn là: " + 1000 * timeCall);
+    } else if (timeCall >= 0) {
+        alert('Thời gian gọi: ' + timeCall + ", Cước Điện Thoại Của Bạn là: " + 1000 * timeCall);
+    } else {
+        alert("Bạn Nhập Không Chính Xác, vui lòng nhập lại.");
+    }
+</script>
+</body>
+</html>

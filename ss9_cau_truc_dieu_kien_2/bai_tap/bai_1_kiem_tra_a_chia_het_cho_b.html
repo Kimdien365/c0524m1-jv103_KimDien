@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra xem a có chia hết cho b hay không</title>
+</head>
+<body>
+<form>
+    <h2>Nhập hai số a và b</h2>
+    <input type ="number" id="input_a">
+    <input type ="number" id="input_b">
+    <button type="button" onclick="tinh()">Kiểm tra</button>
+    <p id="result">Kết quả:</p>
+</form>
+<script>
+function tinh() {
+    let a = + document.getElementById("input_a").value;
+    let b = + document.getElementById("input_b").value;
+    let c = a % b;
+    if (c === 0 ){
+        document.getElementById("result").innerText= 'Kết quả: ' +a + " chia hết cho " + b;
+    } else {
+        document.getElementById("result").innerText= 'Kết quả: ' +a + " không chia hết cho " + b;
+    }
+}
+</script>
+</body>
+</html>

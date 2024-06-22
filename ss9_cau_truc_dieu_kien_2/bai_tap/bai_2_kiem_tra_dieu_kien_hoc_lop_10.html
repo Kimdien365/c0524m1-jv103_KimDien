@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra điều kiện vào học lớp 10</title>
+</head>
+<body>
+<form>
+    <h2>Nhập tuổi của bạn vào đây:</h2>
+    <input type="number" id="inputTuoi">
+    <input type="button" value="xetDK" onclick="xet()">
+    <p id="dieuKien">Điều kiện vào học lớp 10:</p>
+</form>
+<script>
+    function xet() {
+        let tuoi= +document.getElementById("inputTuoi").value;
+        if( tuoi < 16) {
+            document.getElementById("dieuKien").innerText="Điều kiện vào học lớp 10: Không đủ điều kiện học lớp 10";
+        } else {
+            document.getElementById("dieuKien").innerText="Điều kiện vào học lớp 10: Đủ điều kiện học lớp 10";
+        }
+    }
+</script>
+</body>
+</html>

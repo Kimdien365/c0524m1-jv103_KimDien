@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm Tra Số Lớn Hay Nhỏ Hơn Không</title>
+</head>
+<body>
+<form>
+    <h2>Nhập vào 1 số bất kỳ:</h2>
+    <input type="number" id="inputNumber">
+    <button type="button" onclick="clickMe()">Kiểm Tra</button>
+    <p id="result">Kết quả kiểm tra:</p>
+</form>
+<script>
+    function clickMe() {
+        let n= +document.getElementById("inputNumber").value;
+        if (n > 0) {
+            document.getElementById("result").innerText = "Kết quả kiểm tra: Số " + n + ' lớn hơn 0';
+        } else if ( n === 0) {
+            document.getElementById("result").innerText = "Kết quả kiểm tra: Số " + n + ' bằng 0';
+        } else {
+            document.getElementById("result").innerText = "Kết quả kiểm tra: Số " + n + ' nhỏ hơn 0';
+        }
+    }
+</script>
+</body>
+</html>
