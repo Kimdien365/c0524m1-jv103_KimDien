@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính diện tích hình vuông</title>
+</head>
+<body>
+<form>
+    <h2>Nhập Cạnh a trong 1 hình vuông (m):</h2>
+    <input type="number" id="inputA">
+    <button type="button" onclick="check()">Tính diện tích</button>
+    <p id="result">Diện tích hình vuông là (m<sup>2</sup>):</p>
+</form>
+<script>
+    function check(){
+        let a= +document.getElementById("inputA").value;
+        let area=a*a;
+        document.getElementById("result").innerHTML="Diện tích hình vuông là:" +area;
+    }
+</script>
+</body>
+</html>

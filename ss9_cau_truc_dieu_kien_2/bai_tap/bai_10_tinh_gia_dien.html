@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính giá điện</title>
+</head>
+<body>
+<script>
+    let soDien = +prompt("Nhập số điện tiêu thụ:");
+    let tienDien = 3000;
+    if (soDien > 100) {
+        alert("Tiền điện là: " + soDien * tienDien * 150 / 100);
+    } else if (soDien > 50) {
+        alert("Tiền điện là: " + soDien * tienDien * 120 / 100);
+    } else if (soDien >= 0) {
+        alert("Tiền điện là: " + soDien * tienDien);
+    } else {
+        alert("Bạn nhập không đúng")
+    }
+</script>
+</body>
+</html>

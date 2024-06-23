@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra cạnh của một tam giác</title>
+</head>
+<body>
+<script>
+    let canhA = +prompt("Nhập cạnh a");
+    let canhB = +prompt("Nhập cạnh b");
+    let canhC = +prompt("Nhập cạnh c");
+    if (canhA <= 0 || canhB <= 0 || canhC <= 0) {
+        alert("Đây không phải là một tam giác")
+    } else if (canhA + canhB > canhC && canhB + canhC > canhA && canhA + canhC > canhB) {
+        alert("Đây là một tam giác")
+    } else {
+        alert("Đây không phải là một tam giác")
+    }
+</script>
+</body>
+</html>

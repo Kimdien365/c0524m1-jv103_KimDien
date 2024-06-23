@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải phương trình bậc 2</title>
+</head>
+<body>
+<h2>Tính nghiệm của phương trình bậc 2: ax<sup>2</sup> +b = 0</h2>
+<form>
+    <input type="number" id="inputA">
+    <input type="number" id="inputB">
+    <button type="button" onclick="tinh()">Tính</button>
+    <p id="result">Nghiệm của phương trình này là:</p>
+    <script>
+        function tinh() {
+            let a = +document.getElementById("inputA").value;
+            let b = +document.getElementById("inputB").value;
+            let nghiem = (-b / a) ** 0.5;
+            if (a === 0 || b > 0) {
+                document.getElementById("result").innerText = "Phương trình vô nghiệm";
+            } else {
+                document.getElementById("result").innerText = "Nghiệm của phương trình này là: x = " +nghiem +" và x = -" +nghiem;
+            }
+        }
+    </script>
+</form>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính thuế thu nhập cá nhân</title>
+</head>
+<body>
+<script>
+    alert("Giả sử mức lương trên 10 triệu thì phải nộp thuế và số tiền thuế được tính như sau: (Thu Nhập - 10 triệu) x bậc thuế - giảm trừ phụ thuộc. Giả sử có 3 bậc là 50tr, 100tr và 200tr");
+    let thuNhap = +prompt("Nhập số thu nhập của bạn ở đây");
+    let phuThuoc = +prompt("Nhập số người phụ thuộc");
+    let tienThueBac0 = (thuNhap - 10000000 - phuThuoc * 4000000) * 5 / 100;
+    let tienThueBac1 = (thuNhap - 10000000 - phuThuoc * 4000000) * 10 / 100;
+    let tienThueBac2 = (thuNhap - 10000000 - phuThuoc * 4000000) * 20 / 100;
+    let tienThueBac3 = (thuNhap - 10000000 - phuThuoc * 4000000) * 30 / 100;
+    if (thuNhap < 0 || phuThuoc < 0) {
+        alert("Bạn đã nhập sai");
+    } else if (thuNhap >= 200000000 && tienThueBac3 > 0) {
+        alert("Tiền thuế của bạn là: " + tienThueBac3 + " VNĐ");
+    } else if (thuNhap >= 100000000 && tienThueBac2 > 0) {
+        alert("Tiền thuế của bạn là: " + tienThueBac2 + " VNĐ");
+    } else if (thuNhap >= 50000000 && tienThueBac1 > 0) {
+        alert("Tiền thuế của bạn là: " + tienThueBac1 + " VNĐ");
+    } else if (thuNhap > 10000000 && tienThueBac0 > 0) {
+        alert("Tiền thuế của bạn là: " + tienThueBac0 + " VNĐ");
+    } else {
+        alert("Tiền thuế của bạn là: 0 VNĐ");
+    }
+</script>
+</body>
+</html>

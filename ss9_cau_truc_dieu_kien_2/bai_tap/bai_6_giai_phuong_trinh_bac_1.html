@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải Phương Trình Bậc 1</title>
+</head>
+<body>
+<h2> Giải Phương trình bậc 1: ax + b = 0</h2>
+<form>
+    <input type="number" id="inputA">
+    <input type="number" id="inputB">
+    <button type="button" onclick="tinhX()">Tính x</button>
+    <p id="result">Nghiệm của phương trình là: X =</p>
+</form>
+<script>
+    function tinhX() {
+        let soA = +document.getElementById("inputA").value;
+        let soB = +document.getElementById("inputB").value;
+        let soX = -soB / soA;
+        if (soA === 0) {
+            document.getElementById("result").innerText = "Phương trình vô nghiệm";
+        } else {
+            document.getElementById("result").innerText = "Nghiệm của phương trình là: X = " + soX;
+        }
+    }
+</script>
+</body>
+</html>
