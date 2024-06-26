@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển thị các số nguyên tố đầu tiên</title>
+</head>
+<body>
+<script>
+    let count = 0;
+    let N;
+    let numbers;
+    do {
+        numbers = +prompt("Nhập vào số lượng số nguyên tố")
+    } while (numbers < 1);
+    for (N = 2; N >= 2 && N < 8 && count < numbers; N++) {
+        if (N === 4 || N === 6) {
+            continue;
+        }
+        document.write(N + "<br>");
+        count++;
+    }
+    for (N = 8; N >= 8 && count < numbers; N++) {
+        if (N % 2 === 0 || N % 3 === 0 || N % 5 === 0 || N % 7 === 0) {
+            continue;
+        }
+        document.write(N + "<br>");
+        count++;
+    }
+</script>
+</body>
+</html>

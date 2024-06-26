@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính giai thừa của một số nguyên dương</title>
+</head>
+<body>
+<script>
+    let N;
+    let M;
+    let resultM=1;
+    M = +prompt("Nhập 1 số nguyên dương")
+while (M<=0) {
+    M = +prompt("Nhập 1 số nguyên dương");
+}
+    for (N=1;N<=M;N++) {
+        console.log(N);
+        resultM *=N;
+    }
+    alert("Giai thừa của " +M +" là: " +resultM);
+</script>
+</body>
+</html>

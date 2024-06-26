@@ -5,6 +5,42 @@
     <title>Game puzzle</title>
 </head>
 <body>
+<img onclick="clickImg1()" id="img1" src="https://demo.codegym.vn/8/puzzlegame/img/panda_swap_part1x1.jpg" alt="gauTruc1" style="width: 800px; height: 150px;"><br>
+<img onclick="clickImg2()" id="img2" src="https://demo.codegym.vn/8/puzzlegame/img/panda_swap_part2x1.jpg" alt="gauTruc2" style="width: 800px; height: 150px;"><br>
+<img onclick="clickImg3()" id="img3" src="https://demo.codegym.vn/8/puzzlegame/img/panda_swap_part3x1.jpg" alt="gauTruc3" style="width: 800px; height: 150px;"><br>
+<img onclick="clickImg4()" id="img4" src="https://demo.codegym.vn/8/puzzlegame/img/panda_swap_part4x1.jpg" alt="gauTruc4" style="width: 800px; height: 150px;"><br>
+<img onclick="clickImg5()" id="img5" src="https://demo.codegym.vn/8/puzzlegame/img/panda_swap_part5x1.jpg" alt="gauTruc5" style="width: 800px; height: 150px;"><br>
 
+<img src="https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part1x1.jpg" alt="meoRung1" style="width: 800px; height: 150px;"><br>
+<img src="https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part2x1.jpg" alt="meoRung2" style="width: 800px; height: 150px;"><br>
+<img src="https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part3x1.jpg" alt="meoRung3" style="width: 800px; height: 150px;"><br>
+<img src="https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part4x1.jpg" alt="meoRung4" style="width: 800px; height: 150px;"><br>
+<img src="https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part5x1.jpg" alt="meoRung5" style="width: 800px; height: 150px;"><br>
+
+<img src="https://demo.codegym.vn/8/puzzlegame/img/monkey_part1x1.jpg" alt="conKhi1" style="width: 800px; height: 150px;"><br>
+<img src="https://demo.codegym.vn/8/puzzlegame/img/monkey_part2x1.jpg" alt="conKhi2" style="width: 800px; height: 150px;"><br>
+<img src="https://demo.codegym.vn/8/puzzlegame/img/monkey_part3x1.jpg" alt="conKhi3" style="width: 800px; height: 150px;"><br>
+<img src="https://demo.codegym.vn/8/puzzlegame/img/monkey_part4x1.jpg" alt="conKhi4" style="width: 800px; height: 150px;"><br>
+<img src="https://demo.codegym.vn/8/puzzlegame/img/monkey_part5x1.jpg" alt="conKhi5" style="width: 800px; height: 150px;"><br>
+<script>
+    let newImg1;
+    for (i=1;i<3;i++) {
+        function clickImg1() {
+            newImg1 = document.getElementById("img1");
+            break;
+        }
+    }
+    switch (N) {
+        case 1:
+            newImg1.src = "https://demo.codegym.vn/8/puzzlegame/img/panda_swap_part1x1.jpg";
+            break;
+        case 2:
+            newImg1.src = "https://demo.codegym.vn/8/puzzlegame/img/funny-cat1_part1x1.jpg";
+            break;
+        case 3:
+            newImg1.src = "https://demo.codegym.vn/8/puzzlegame/img/monkey_part1x1.jpg";
+            break;
+    }
+</script>
 </body>
 </html>
