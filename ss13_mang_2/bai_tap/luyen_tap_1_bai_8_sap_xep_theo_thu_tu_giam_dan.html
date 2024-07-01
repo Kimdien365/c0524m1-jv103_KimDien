@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sắp xếp mảng theo thứ tự giảm dần</title>
+</head>
+<body>
+<script>
+    let numbers = [];
+    for (let i = 0; i < 10; i++) {
+        numbers[i] = +prompt("nhập nhần tử số nguyên thứ " + (i + 1));
+    }
+    numbers.sort(function (a,b) {
+        return b-a;
+    })
+    console.log(numbers);
+</script>
+</body>
+</html>

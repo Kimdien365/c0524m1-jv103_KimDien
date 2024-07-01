@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển</title>
+</head>
+<body>
+<form>
+    <input type="text" id="inputEnglish">
+    <input type="button" onclick="search()" value="Search">
+    <br>
+    <p id="result"> Result: </p>
+</form>
+<script>
+    let english = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten'];
+    let vietnam = ['một', 'hai', 'ba', 'bốn', 'năm', 'sáu', 'bảy', 'tám', 'chín', 'mười'];
+
+    function search() {
+        let text = document.getElementById("inputEnglish").value;
+        for (let i = 0; i < english.length; i++) {
+            if (english[i] === text) {
+                document.getElementById("result").innerText = "Result: " + vietnam[i];
+                break;
+            } else {
+                document.getElementById("result").innerText = "Result: Không tìm thấy"
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

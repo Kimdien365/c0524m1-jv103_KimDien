@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hiển Thị Giá Trị Lớn Nhất Và Giá Trị Trung Bình</title>
+</head>
+<body>
+<script>
+    let numbers = [];
+    for ( let i = 0; i<3; i++) {
+        numbers[i] = +prompt("nhập số");
+    }
+    let max = numbers[0];
+    let tb =0;
+    for (let i=0; i<numbers.length; i++) {
+        if (max<numbers[i]) {
+            max = numbers[i];
+        }
+        tb += numbers[i];
+    }
+    alert("Giá trị lớn nhất là: " +max);
+    alert("Giá trị trung bình là: " + tb/3);
+</script>
+</body>
+</html>

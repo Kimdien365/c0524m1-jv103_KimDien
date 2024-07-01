@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo bàn cờ caro đơn giản</title>
+</head>
+<body>
+<h2>Caro Game Simple</h2>
+<p id = "oCaro"></p>
+<input type="button" value="Change Value" onclick="changeValue()">
+<script>
+    let data = "";
+    let row = [];
+    for (let i = 0; i < 5; i++) {
+        row[i] = [0, 0, 0, 0, 0]; /*Gán 5 dòng giá trị cho mảng 2 chiều*/
+    }
+    for (let i = 0; i < 5; i++) {
+        data += "<br>";
+        for (let j = 0; j < 5; j++) {
+            data += row[i][j] + "&nbsp;&nbsp"; /*Gán dữ liệu cho biến data*/
+        }
+        document.getElementById("oCaro").innerHTML = data;
+    }
+
+    function changeValue() {
+        data ="";
+        let x = parseInt(prompt("nhập giá trị đòng x:"));
+        let y = parseInt(prompt("Nhập giá trị cột y"));
+        for (let i = 0; i < 5; i++) {
+            data += "<br>";
+            for (let j = 0; j < 5; j++) {
+                data += row[i][j] + "&nbsp;&nbsp"; /*Gán dữ liệu cho biến data*/
+            }
+            row[x][y] = "x";
+        }
+        document.getElementById("oCaro").innerHTML = data;
+        console.log(row);
+    }
+
+
+</script>
+</body>
+</html>

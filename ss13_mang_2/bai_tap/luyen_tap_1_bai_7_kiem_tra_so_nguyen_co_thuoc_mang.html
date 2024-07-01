@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm Tra V có thuộc mảng, xoá và thêm 0 vào cuối mảng</title>
+</head>
+<body>
+<script>
+    let numbers = [];
+    let a;
+    let result = [];
+    for (let i = 0; i < 10; i++) {
+        numbers[i] = +prompt("nhập nhần tử số nguyên thứ " + (i + 1));
+    }
+    a = +prompt("Nhập số nguyên cần kiểm tra");
+    for (let j = 0; j < numbers.length; j++) {
+        if (numbers[j] === a) {
+            numbers.splice(j, 1);
+            result = numbers.push(0);
+            break;
+        }
+    }
+    console.log(numbers);
+</script>
+</body>
+</html>

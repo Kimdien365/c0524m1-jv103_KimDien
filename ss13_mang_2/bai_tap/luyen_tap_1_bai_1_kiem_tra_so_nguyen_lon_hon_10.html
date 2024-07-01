@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số nguyên lớn hơn 10</title>
+</head>
+<body>
+<script>
+    let numbers = [];
+    let result = 0;
+    let max = [];
+    for (let i = 0; i < 10; i++) {
+        numbers[i] = +prompt("Nhâp số nguyên thứ : " + (i + 1));
+        if (numbers[i] >= 10) {
+            result++;
+            max +=numbers[i] +", ";
+        }
+    }
+    alert("Có " + result + " số lớn hơn 10 là: " +max);
+</script>
+</body>
+</html>

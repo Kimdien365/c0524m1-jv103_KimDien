@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sử dụng các hàm có sẵn của mảng</title>
+</head>
+<body>
+<!--Bài 1: Nối tất cả các phần tử của mảng-->
+<script>
+/*   let myColor = ["Red", "Green", "White", "Black"];
+   let myColor2 = [];
+for ( let i =0; i<4; i++) {
+   myColor2 += myColor[i]+",";
+}
+console.log(myColor2);*/
+   /*let result = myColor.join();*/ /*Nối tất cả các giá trị của mảng*/
+    /*console.log(result);*/
+
+   /*Bài 2: Chèn dấu trừ vào giữa 2 số chẵn*/
+/*   let numbers;
+   let convert ="";
+   for (let i =0; i<5;i++) {
+       numbers = +prompt("nhập số vào đây");
+       if (numbers %2 ===0){
+           numbers ="-" + numbers;
+       }
+       convert += numbers;
+   }
+   console.log(convert);*/
+
+   /*Bài 3: Chuyển ký tự chữ thường sang chữ hoa*/
+let str = prompt("Nhập vào một câu");
+let UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+let lower = "abcdefghijklmnopqrstuvwxyz";
+let result = [];
+for (let i = 0; i < str.length; i++) {
+    if (UPPER.indexOf(str[i]) !== -1) { /*Kiểm tra chuỗi vừa nhập vào có chữ nào thuộc biến UPPer ko, nếu có thì str[i] sẽ là số thứ tự, nếu không có thì str[i] sẽ là -1*/
+        result.push(str[i].toLowerCase()); /*Chuyển chữ tại vị trí str[i] thành chữ thường*/
+    } else if (lower.indexOf(str[i]) !== -1) {
+        result.push(str[i].toUpperCase()); /*Chuyển chữ tại vị trí str[i] thành chữ hoa*/
+    } else {
+        result.push(str[i]);
+    }
+}
+console.log(result.join("")); /*Nối các ký tự với nhau và nối lại không có dấu phảy*/
+
+</script>
+</body>
+</html>

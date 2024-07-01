@@ -8,13 +8,19 @@
 <script>
     let nhietDo;
     nhietDo = prompt("Nhập nhiệt độ của bạn:");
-if (nhietDo<=20) {
-    alert("Hãy tăng nhiệt độ");
-} else if ( nhietDo>=100) {
-    alert("Hãy giảm nhiệt độ");
-} else {
-    alert("Nhiệt độ bình thường");
-}
+    for(; ;) {
+        if (nhietDo<=20) {
+            alert("Hãy tăng nhiệt độ");
+            nhietDo = prompt("Nhập nhiệt độ của bạn:");
+        } else if ( nhietDo>=100) {
+            alert("Hãy giảm nhiệt độ");
+            nhietDo = prompt("Nhập nhiệt độ của bạn:");
+        } else {
+            alert("Nhiệt độ bình thường");
+            break;
+        }
+    }
+
 </script>
 </body>
 </html>

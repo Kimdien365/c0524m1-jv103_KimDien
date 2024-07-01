@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Các hàm cơ bản của mảng</title>
+</head>
+<body>
+<script>
+/*    let numbers = [1,2,3,4,5,6];
+    numbers.push(100);
+    console.log(numbers);*/
+    /*Các hàm thông dụng*/
+    /*push (): thêm phần tử vào cuối mảng*/
+    /*pop() : xoá phần tử ở cuối mảng*/
+    /*shift(): xoá phần tử ở đầu mảng*/
+    /*unfhirt(): thêm phần tử ở đầu mảng */
+    /*reverse(): đảo các phần tử trong mảng*/
+    /*concat(): Nối mảng*/
+    /*sort(): sắp xếp mảng từ nhỏ đến lớn, để hàm chạy đúng thì phải thêm hàm function. vd: numbers.cort( function (a,b) (return a-b;})*/
+    /*splice(): thêm hoặc xoá ở 1 vị trí bất kỳ trong mảng*/
+    /*vd: numbers.splice(2,3,555,444); nghĩa là xoá 3 phần tử tính từ vị trí thứ 2 và them6 phần tử 555 vào vị trí thứ 2*/
+    /*toString() - join (): Chuyển mảng thành chuỗi, join() có thể thêm ký tự, toString() thì chỉ sử dụng dấu phẩy , */
+
+/*Ví Dụ về các hàm của mảng*/
+/*Hàm Push: thêm phần tử vào cuối mảng*/
+let numbers1 = [1,2,6,15,3,4,5,210,61,'f','a','c','d','e','b'];/*Khai báo mảng với tên biến là numbers1*/
+let numbers2 = [100,200,500,'an', 'ba', 'be'];/*Khai báo mảng với tên biến là numbers2*/
+/*numbers.pop();*/ /*xoá phần tử ở cuối mảng*/
+/*numbers.push(100); /!*Thêm giá trị 100 cuối vào mảng*!/*/
+/*numbers.shift();*/ /*xoá phần tử ở đầu mảng*/
+/*numbers.unshift(100);*/ /*Thêm phần tử 100 ở đầu mảng*/
+/*numbers.reverse();*/ /*đảo các phần tử trong mảng*/
+/*numbers.sort();*/ /* sắp xếp giá trị mảng từ nhỏ đến lớn đối với chữ cái*/
+/*numbers.sort(function (m,n) {
+    return m-n;
+});*/ /* sắp xếp giá trị mảng từ nhỏ đến lớn đối với chữ số*/
+/*numbers.splice(1,2,3,4);*/ /*Xoá 2 phần tử tại vị trí số 1 và thêm giá trị 3 và 4 vào vị trí đó, nếu chỉ muốn thêm mà không muốn xoá thì thay số 2 bằng 0*/
+/*numbers.toString();*/ /*Chuyển mảng thành chuỗi*/
+let noi = numbers1.join("////"); /*Chuyển mảng thành chuỗi*/
+/*let summm = numbers1.concat(numbers2);*/ /*Nối hai biến numbers1 và numbers2 lại thành 1 biến có tên là summm*/
+console.log(noi); /*Hiển thị mảng với tên biến là numbers*/
+console.log(noi[8]); /* HIển thị giá trị của mảng tại vị trí thứ 8*/
+</script>
+</body>
+</html>
