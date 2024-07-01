@@ -15,8 +15,11 @@
     a = +prompt("Nhập số nguyên cần kiểm tra");
     for (let j = 0; j < numbers.length; j++) {
         if (numbers[j] === a) {
-            numbers.splice(j, 1);
-            result = numbers.push(0);
+            console.log(j)
+            for (let n = j; n<numbers.length-1; n++) {
+                numbers[n] = numbers[n+1];
+            }
+            numbers [numbers.length-1] = 0;
             break;
         }
     }
