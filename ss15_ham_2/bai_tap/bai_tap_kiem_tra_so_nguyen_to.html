@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hàm kiểm tra số nguyên tố</title>
+</head>
+<body>
+<form>
+    <h2>Nhập vào 1 số để kiểm tra</h2>
+    <input type="number" id="inputNumber">
+    <input type="button" value="check" onclick="checkPrime()">
+    <p id="result">Result: </p>
+    <p id="resultLessThan10000">Result less than 100: </p>
+</form>
+<script>
+    function isPrime(number) {
+        if (number < 2) {
+            return false;
+        }
+        for (let i = 2; i <= Math.sqrt(number); i++) {
+            if (number % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+    let numb = 1;
+for (let j =0; j<100; j++) {
+    if (isPrime(numb)) {
+        document.getElementById("resultLessThan10000").innerHTML += numb +", ";
+    }
+    numb++;
+}
+    function checkPrime() {
+        let number = document.getElementById("inputNumber").value;
+        let result = isPrime(number);
+        document.getElementById("result").innerHTML = "Result: " + result;
+    }
+</script>
+</body>
+</html>

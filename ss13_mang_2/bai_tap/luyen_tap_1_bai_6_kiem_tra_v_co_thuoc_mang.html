@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm xem V có nằm trong mảng số nguyên không</title>
+</head>
+<body>
+<script>
+    let numb = [];
+    let i;
+    for (i = 0; i < 10; i++) {
+        numb = +prompt("Nhập số nguyên thứ " + (i + 1));
+    }
+    let V = +prompt("Nhập số nguyên V cần kiểm tra")
+    for (i = 0; i < numb.length; i++) {
+        if (V === numb[i]) {
+            alert("V is in the array");
+            break;
+        } else {
+            alert("V is not in the array")
+        }
+    }
+</script>
+</body>
+</html>

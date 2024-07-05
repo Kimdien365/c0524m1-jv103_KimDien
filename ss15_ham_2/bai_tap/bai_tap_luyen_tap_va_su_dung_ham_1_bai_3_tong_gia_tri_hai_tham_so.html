@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tổng của hai tham số</title>
+</head>
+<body>
+<script>
+    let number1 = +prompt("Nhập tham số thứ nhất");
+    let number2 = +prompt("Nhập tham số thứ hai");
+    function isSumNumbers(number1, number2) {
+        if (number1 < number2) {
+            return number1 + number2;
+        }
+        if (number1>number2) {
+          return "Number1 > number2";
+        }
+    }
+    alert(isSumNumbers(number1, number2));
+</script>
+</body>
+</html>

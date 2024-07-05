@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trả về số nguyên có giá trị nhỏ nhất</title>
+</head>
+<body>
+<script>
+    let numb1 = +prompt("Nhập số nguyên thứ nhất");
+    let numb2 = +prompt("Nhập số nguyên thứ hai");
+    let numb3 = +prompt("Nhập số nguyên thứ ba");
+    let numbers = [numb1,numb2,numb3];
+    function isMinNumber (numb1,numb2,numb3) {
+        let min = numb1;
+        for (let i=1; i<3;i++) {
+            if (min>numbers[i]) {
+                min=numbers[i];
+            }
+        }
+        return min;
+    }
+    alert(isMinNumber (numb1,numb2,numb3));
+</script>
+</body>
+</html>

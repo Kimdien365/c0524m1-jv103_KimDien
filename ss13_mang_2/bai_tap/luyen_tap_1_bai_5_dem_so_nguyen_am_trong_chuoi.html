@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đếm số nguyên âm trong một chuỗi</title>
+</head>
+<body>
+<script>
+    let count = 0;
+    let str = prompt("Nhập 1 chuỗi");
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === "-" && isNaN(str [i + 1]) === false) {
+                count++;
+        }
+    }
+    alert(count);
+</script>
+</body>
+</html>

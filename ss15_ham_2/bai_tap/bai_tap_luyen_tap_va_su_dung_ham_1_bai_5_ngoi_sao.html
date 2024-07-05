@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ngôi sao</title>
+</head>
+<body>
+<script>
+    let ngoiSao = ['Polaris','Aldebaran','Deneb','Vega','Altair','Dubhe','Regulus'];
+    let chomSao = ['Ursa Minor','Tarurus','Cygnus','Lyra','Aquila','Ursa Major','Leo'];
+    let tenNgoiSao = prompt("Nhập tên ngôi sao");
+    function laChomSao (tenNgoiSao) {
+        for (let i=0; i<7; i++){
+            if(ngoiSao[i] === tenNgoiSao){
+                return chomSao[i];
+            }
+        }
+            return "Không có chòm sao tương ứng"
+    }
+    alert(laChomSao(tenNgoiSao));
+</script>
+</body>
+</html>

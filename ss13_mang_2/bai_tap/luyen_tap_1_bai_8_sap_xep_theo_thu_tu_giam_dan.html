@@ -6,14 +6,32 @@
 </head>
 <body>
 <script>
-    let numbers = [];
+/*    let numbers = [];
     for (let i = 0; i < 10; i++) {
         numbers[i] = +prompt("nhập nhần tử số nguyên thứ " + (i + 1));
     }
     numbers.sort(function (a,b) {
         return b-a;
     })
-    console.log(numbers);
+    console.log(numbers);*/
+let arr = [1,10,12,52,0,3,8,9,4,10];
+
+// let arr = [];
+//
+// for (let i = 0; i < 10; i++) {
+//     arr[i] = +prompt(`nhap phan tu thu ${i} `);
+// }
+
+for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = i; j < arr.length; j++) {
+        if (arr[i] < arr[j]) {
+            let temp = arr[i];
+            arr[i] = arr[j];
+            arr[j] = temp;
+        }
+    }
+}
+document.write(arr);
 </script>
 </body>
 </html>

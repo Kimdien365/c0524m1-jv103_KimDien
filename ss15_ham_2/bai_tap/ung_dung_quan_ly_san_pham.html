@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng quản lý sản phẩm sử dụng hàm</title>
+</head>
+<body>
+<h2>Danh Sách Sản Phẩm</h2>
+<input type="text" id="themSanPham">
+<input type="button" onclick="them()" value="Thêm">
+<input type="button" onclick="bo()" value="Xoá Sản Phẩm">
+<input type="button" onclick="doiTen" value="Đổi Tên Sản Phẩm">
+<p id="danhSachSanPham">Danh Sách Các Sản Phẩm Của Bạn</p>
+<script>
+    let danhSach = [];
+    function them() {
+        danhSach.push(document.getElementById("themSanPham").value);
+        document.getElementById("themSanPham").value = "";
+        let e = "Danh Sách Các Sản Phẩm Của Bạn: ";
+        for (let i=0; i<danhSach.length; i++) {
+            e += "<br>" +(i+1) +". "  +danhSach[i];
+        }
+        document.getElementById("danhSachSanPham").innerHTML =e;
+        console.log(danhSach);
+    }
+
+</script>
+</body>
+</html>
