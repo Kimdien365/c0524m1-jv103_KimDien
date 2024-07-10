@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp mô tả Temperature</title>
+</head>
+<body>
+<script>
+    class NhietDo {
+        constructor(doC) {
+            this.doC = doC;
+        }
+        setDoC(newDoC) {
+            this.doC = newDoC;
+        }
+        DoF() {
+            return this.doC* 9/5 + 32
+        }
+        DoK() {
+           return this.doC + 273
+        }
+    }
+    let nhietDo = new NhietDo(25);
+    nhietDo.setDoC(50);
+    alert(nhietDo.DoF());
+    alert(nhietDo.DoK());
+</script>
+</body>
+</html>

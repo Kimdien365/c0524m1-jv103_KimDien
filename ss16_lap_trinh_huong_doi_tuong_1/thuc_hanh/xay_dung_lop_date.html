@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây Dựng Lớp Date</title>
+</head>
+<body>
+<script>
+ class Date {
+     constructor(day,month,year) {
+         this.day = day;
+         this.month = month;
+         this.year = year;
+     }
+ }
+ let date = new Date(2,2,2007);
+ date.day = "10";
+ date.month = "10";
+ date.year = "2019"
+ alert(date.day + "/" + date.month + "/" + date.year);
+ let str = date.day + "/" + date.month + "/" + date.year;
+ console.log(str.toString());
+</script>
+</body>
+</html>

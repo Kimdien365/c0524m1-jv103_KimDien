@@ -5,23 +5,49 @@
     <title>Ứng dụng quản lý sản phẩm sử dụng hàm</title>
 </head>
 <body>
-<h2>Danh Sách Sản Phẩm</h2>
-<input type="text" id="themSanPham">
-<input type="button" onclick="them()" value="Thêm">
-<input type="button" onclick="bo()" value="Xoá Sản Phẩm">
-<input type="button" onclick="doiTen" value="Đổi Tên Sản Phẩm">
-<p id="danhSachSanPham">Danh Sách Các Sản Phẩm Của Bạn</p>
+<h2>Add New Product</h2>
+<input type="text" id="inputProduct" placeholder="New Product" style="width: 200px">
+<input type="button" onclick="addProduct()" value="Add">
+<h2>Display All Product</h2>
+<table>
+    <tr>
+        <td> Product Name</td>
+        <td id="quantityProduct" style=" width: 200px"></td>
+    </tr>
+</table>
+<table id="nameProduct"> </table>
 <script>
-    let danhSach = [];
-    function them() {
-        danhSach.push(document.getElementById("themSanPham").value);
-        document.getElementById("themSanPham").value = "";
-        let e = "Danh Sách Các Sản Phẩm Của Bạn: ";
-        for (let i=0; i<danhSach.length; i++) {
-            e += "<br>" +(i+1) +". "  +danhSach[i];
+    let x = 0;
+    let product = [];
+
+    function addProduct() {
+        let newProduct = document.getElementById("inputProduct").value;
+        product.push(newProduct);
+        document.getElementById("inputProduct").value = "";
+        displayNewProduct();
+    }
+
+    function displayNewProduct() {
+        let display = "";
+        for (let i = 0; i < product.length; i++) {
+            display += ` <tr >
+                    <td style="width: 200px"> ${product[i]} </td>
+                    <td><input type="button" onclick="editProduct(${i})" value="Edit"></td>
+                    <td><input type="button" onclick="deleteProduct(${i})" value="Delete"></td>
+               </tr>`
         }
-        document.getElementById("danhSachSanPham").innerHTML =e;
-        console.log(danhSach);
+        document.getElementById("nameProduct").innerHTML = display;
+        document.getElementById("quantityProduct").innerHTML = product.length + " Product";
+    }
+
+    function editProduct(index) {
+        let editNameProduct = prompt("sửa tên sản phẩm : " + product[index]);
+        product[index] = editNameProduct;
+        displayNewProduct();
+    }
+    function deleteProduct(index) {
+        product.splice(index,1);
+        displayNewProduct();
     }
 
 </script>

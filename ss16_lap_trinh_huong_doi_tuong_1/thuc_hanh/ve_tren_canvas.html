@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vẽ trên Canvas</title>
+</head>
+<body>
+<canvas id="myCanvasLine" height="100" width="200"></canvas>
+<br>
+<canvas id="myCanvasCircle" height="100" width="200"></canvas>
+<br>
+<canvas id="myCanvasText" height="100" width="500"></canvas>
+<br>
+<canvas id="myCanvasGradient" height="100" width="500"></canvas>
+<script>
+    /*VẼ ĐƯỜNG THẲNG*/
+    let cLine = document.getElementById("myCanvasLine");/*Tạo biến để hiển thị*/
+    let ctxLine =cLine.getContext("2d"); /*Gọi gán biến hiển thị vào hàm vẽ*/
+    ctxLine.moveTo(0,0); /*Điểm bắt đầu vẽ*/
+    ctxLine.lineTo(200,100); /*Vẽ đến điểm thứ 2*/
+    ctxLine.moveTo(0,100);
+    ctxLine.lineTo(200,0);
+    ctxLine.stroke(); /*Hiển thị kết quả của biến ctxLine*/
+
+
+    /*VẼ ĐƯỜNG TRÒN*/
+    let cCircle = document.getElementById("myCanvasCircle");
+    let ctx = cCircle.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(100,50,40,0,2*Math.PI);
+    ctx.stroke();
+
+    /*VẼ CHỮ*/
+    let cText = document.getElementById("myCanvasText");
+    let ctxText = cText.getContext("2d");
+    ctxText.font = "30px Arial";
+    ctxText.fillText("Phạm Kim Điền", 10, 50);
+
+    /*Hiệu ứng Gradient*/
+let cGradient = document.getElementById("myCanvasGradient");
+let ctxGradient = cGradient.getContext("2d");
+
+/*create gradient*/
+let gra =ctxGradient.createLinearGradient(0,0,200,0);
+gra.addColorStop(0,"red");
+gra.addColorStop(1,"white");
+
+/*fill with gradient*/
+    ctxGradient.fillStyle = gra;
+    ctxGradient.fillRect(10,10,150,80);
+
+</script>
+</body>
+</html>

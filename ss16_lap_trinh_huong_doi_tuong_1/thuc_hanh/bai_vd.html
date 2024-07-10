@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Ví Dụ đối tượng</title>
+</head>
+<body>
+<script>
+    /*Các cách tạo class trong JS:
+    * Cách 1: Object Literal*/
+/*    let obj = {
+        name:" Mr Công",
+        Birthday: "1990"
+    }
+    console.log(obj);*/
+    /*Cách 2: tạo class bằng cách sử dụng function*/
+    /*Cách 3: sử dụng từ khoá class
+    * vd: Tạo class Student có các thuộc tính :
+    * tên, ngày sinh, email và hành vi : học*/
+    /*Quy tac: Với biến, hàm => camelCase
+    * class => Danh từ và đặt tên theo nguyên tắc PascalCase: Viết hoa tất cả chữ cái đầu tiên*/
+    /*Constructor: hàm khởi tạo, đây là hàm đặc biệt d639 khởi tạo đối tượng và thường chứa các thuộc tính của đối tượng*/
+    class Student {
+        /*Đây là phần thên của class (class body)*/
+        constructor(name, birthday, email) {
+            this.name = name;
+            this.birthday = birthday;
+            this.email = email;
+        }
+        learn (subject) {
+            console.log("học " +subject);
+        }
+    }
+    let student = new Student("Công", "10/09/1991","cong.nguyen@gmail.com");
+    console.log(student);
+    console.log(student.name);
+    console.log(student.birthday);
+    student.learn("yêu");
+    student.name = "Anh Hiền";
+    student.birthday = "1988";
+    console.log(student);
+</script>
+</body>
+</html>
