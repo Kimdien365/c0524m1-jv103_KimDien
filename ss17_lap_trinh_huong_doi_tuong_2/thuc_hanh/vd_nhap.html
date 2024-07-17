@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Vd tính bao đóng Encapsulation-->
+<script>
+    class Person {
+        constructor(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        say (str) {
+            console.log(`ban ${this.name} nói ${str}`)
+        }
+    }
+    class Student extends Person {
+        constructor(name, age, email) {
+            super(name, age);
+            this.email = email;
+        }
+
+    }
+    let std = new Student("Công", 33, "cong.nguyen@gmail.com")
+std.say ("hello mọi người");
+</script>
+</body>
+</html>

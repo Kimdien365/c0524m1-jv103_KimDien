@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arrnew = [];
+    function swap(arr) {
+        for (let i =0; i<arr.length; i++) {
+            arrnew[i] = arr[i];
+        }
+        arrnew[0] = arr[arr.length-1];
+        arrnew[arr.length-1] = arr[0];
+        return arrnew;
+    }
+    swap([1,2,3,4,5]);
+    console.log(arrnew);
+</script>
+</body>
+</html>

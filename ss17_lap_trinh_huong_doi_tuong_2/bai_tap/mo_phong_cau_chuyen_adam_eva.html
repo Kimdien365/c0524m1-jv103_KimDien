@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mô phỏng câu chuyện Adam và Eva</title>
+</head>
+<body>
+<script>
+    class Apple {
+        constructor(weight) {
+            this.weight = weight;
+        }
+        decrease() {
+            if (this.weight > 0){
+                this.weight = this.weight - 1;
+                return "Khối lượng táo là: " +this.weight
+            }
+            if (this.weight === 0 ) {
+                return "Bạn đã ăn hết táo, bạn không còn gì để ăn nữa";
+            }
+        }
+        isEmpty () {
+            if (this.weight > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        getWeight () {
+            return this.weight;
+        }
+    }
+    class Human {
+        constructor(name, gender, weightHuman) {
+            this.name = name;
+            this.gender = gender;
+            this.weightHuman = weightHuman;
+        }
+        isMale () {
+            if (human.gender === "Nữ") {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        setGender (gender) {
+            this.gender = gender;
+        }
+        eat () {
+            if (apple.isEmpty()) {
+                this.weightHuman = this.weightHuman + 1;
+                console.log(apple.decrease() +", khối lượng của " +this.name +" là: " +this.weightHuman);
+            } else {
+                return console.log(apple.decrease() +", khối lượng của " +this.name + " là: " +this.weightHuman);
+            }
+        }
+        say (string) {
+            console.log(string);
+        }
+        getName () {
+            return this.name;
+        }
+        setName (name) {
+            this.name = name;
+        }
+        getWeightHuman () {
+           return this.weightHuman;
+        }
+        setWeightHuman (weightHuman) {
+            this.weightHuman = weightHuman;
+        }
+    }
+    let apple = new Apple(10);
+    let human1 = new Human("Ngọc Lan", "Nữ", 42);
+    let human2 = new Human("An Bình", "Nam", 70);
+    console.log(apple);
+    human1.say(human1.name +" nói: Xin chào");
+    human2.say(human2.name +" nói: Chào, " +human1.name);
+    human1.say(human1.name +" nói: bạn có muốn ăn Táo không");
+    human2.say(human2.name +" nói: tuyệt vời");
+    human2.eat();
+    human1.eat();
+    human2.eat();
+    human1.eat();
+    human2.eat();
+    human1.eat();
+    human1.eat();
+    human2.eat();
+    human1.eat();
+    human1.eat();
+    human2.eat();
+    human1.setGender("Nam");
+    human1.setName("Minh Vương");
+    human1.setWeightHuman(80);
+    console.log(human1);
+    console.log(human2.getName());
+</script>
+</body>
+</html>

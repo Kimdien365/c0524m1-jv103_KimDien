@@ -19,14 +19,12 @@
 <script>
     let x = 0;
     let product = [];
-
     function addProduct() {
         let newProduct = document.getElementById("inputProduct").value;
         product.push(newProduct);
         document.getElementById("inputProduct").value = "";
         displayNewProduct();
     }
-
     function displayNewProduct() {
         let display = "";
         for (let i = 0; i < product.length; i++) {
@@ -49,7 +47,6 @@
         product.splice(index,1);
         displayNewProduct();
     }
-
 </script>
 </body>
 </html>

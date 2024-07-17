@@ -5,6 +5,7 @@
     <title>Xây dựng lớp mô tả hình chữ nhật</title>
 </head>
 <body>
+<canvas id = "canvas" width="1000" height="2000"></canvas>
 <script>
     class Rectangle {
         constructor(length, width) {
@@ -17,12 +18,24 @@
             Perimeter () {
                 return (this.length + this.width) * 2;
             }
+            displayInCanvas (x,y, color){
+            /*x,y là toạ độ bắt đầu vẽ*/
+            let canvas = document.getElementById("canvas");
+            let context= canvas.getContext("2d");
+            context.fillStyle=color;
+            context.fillRect(x,y,this.width,this.length);
+            }
         }
-    let rectangle = new Rectangle(4, 2);
-    rectangle.length = 10;
-    rectangle.width = 5;
+    let rectangle = new Rectangle(100, 200);
+    let rectangle1 = new Rectangle(100, 200);
+    rectangle.length = 200;
+    rectangle1.length = 200;
+    rectangle.width = 100;
+    rectangle1.width = 100;
     console.log(rectangle.Area());
     console.log(rectangle.Perimeter());
+    rectangle.displayInCanvas(0,0,"red");
+    rectangle1.displayInCanvas(200,200,"green");
 </script>
 </body>
 </html>

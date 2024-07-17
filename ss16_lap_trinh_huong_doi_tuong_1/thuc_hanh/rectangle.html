@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="canvas" width="1000" height="600" style="background-color: lightgreen"></canvas>
+
+<script>
+    // dùng class để khai báo lớp => ES6
+    // tên class nên đặt theo quy tắc PascalCase
+    class Rectangle {
+        // làm một method (phương thức) đặc biệt để khởi tạo đối tượng
+        constructor(height, width) {
+            // thuộc tính
+            this.height = height;
+            this.width = width
+        }
+        // phương thức ( tính năng)
+        getArea(){
+            return this.height*this.width;
+        }
+        getPerimeter(){
+            return (this.height+this.width)*2;
+        }
+        displayInCanvas(x,y,color){
+            // x,y là toạ độ bắt đầu vẽ
+            let canvas = document.getElementById("canvas");
+            let context = canvas.getContext('2d');
+            context.fillStyle=color;
+            context.fillRect(x,y,this.width,this.height);
+        }
+
+    }
+  // chương trình chính
+    let hinhChuNhat1 = new Rectangle(100,200);
+    let hinhChuNhat2 = new Rectangle(300,400);
+    let hinhChuNhat3 = new Rectangle(200,200);
+    console.log("DT hình 1 " + hinhChuNhat1.getArea())
+    console.log("DT hình 2; " + hinhChuNhat2.getArea())
+    hinhChuNhat1.displayInCanvas(0,0, "red")
+    hinhChuNhat2.displayInCanvas(200,200, "green")
+    hinhChuNhat3.displayInCanvas(500,500, "blue")
+</script>
+</body>
+</html>

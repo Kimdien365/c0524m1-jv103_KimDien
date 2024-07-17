@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Công tắc và bóng đèn</title>
+</head>
+<body>
+<canvas id="canvas" width="500" height="500"></canvas>
+<script>
+    class Lamp {
+        constructor() {
+            this.lampStatus = false; /*Khoi tạo mặc định là tắt*/
+        }
+        turnOff () {
+            this.lampStatus = false;
+        }
+        turnOn () {
+            this.lampStatus = true;
+        }
+    }
+
+    class Switch {
+        constructor() {
+            this.switchStatus = false; /*Khởi tạo mặc định công tắc mở*/
+        this.lamp = null;
+        }
+        connectToLamp (den) {
+            this.lamp = den;
+        }
+        switchOff () {
+            this.switchStatus = false; /*trạng thái của công tắc*/
+            if (this.lamp !=null) {
+                this.lamp.turnOff()
+            }
+
+        }
+        switchOn () {
+            this.switchStatus = true; /*trạng thái của công tắc*/
+            if (this.lamp !=null){
+                this.lamp.turnOn();
+            }
+        }
+    }
+    let bongDen = new Lamp();
+    let congTac = new Switch();
+    congTac.connectToLamp(bongDen);
+
+    congTac.switchOn();
+    console.log("trạng thái công tắc " +congTac.switchStatus)
+    console.log("trạng thái bóng đèn " +bongDen.lampStatus)
+
+    congTac.switchOff();
+    console.log("trạng thái công tắc " +congTac.switchStatus)
+    console.log("trạng thái bóng đèn " +bongDen.lampStatus)
+
+</script>
+</body>
+</html>

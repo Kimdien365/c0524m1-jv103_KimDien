@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Học Viên</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<img src="https://manager-student.netlify.app/hvhcqg.png" alt="Hình Học Viện" style="width: 100%; height: 150px">
+<h1 style="background-color: paleturquoise; text-align: center; font-size: 50px; margin: 00px">QUẢN LÝ HỌC VIÊN</h1>
+<div class="container">
+    <table class="left-table" border="1">
+        <tr>
+            <th colspan="2" style="font-size: 25px; background-color: dodgerblue; color: brown">Thông tin học viên</th>
+        </tr>
+        <tr>
+            <th style=" width: 30%; padding: 5px">ID</th>
+            <th><input type="number" id="inputID" placeholder="Ví dụ: 011"></th>
+        </tr>
+        <tr>
+            <th style="padding: 5px">Họ tên</th>
+            <th><input type="text" id="inputName" placeholder="Ví dụ: Đàm Kiều Trinh"></th>
+        </tr>
+        <tr>
+            <th style="padding: 5px">Ngày sinh</th>
+            <th><input type="text" id="inputBirthday" placeholder="Ví dụ: 05/02/2002"></th>
+        </tr>
+        <tr>
+            <th style="padding: 5px">Giới tính</th>
+            <th><input type="text" id="inputGender" placeholder="Ví dụ: Nam"></th>
+        </tr>
+        <tr>
+            <th style="padding: 5px">Lớp</th>
+            <th><input type="text" id="inputClass" placeholder="Ví dụ: USSK113"></th>
+        </tr>
+        <tr>
+            <th style="padding: 5px">Ảnh</th>
+            <th><input type="file" id="inputImage">
+                <img src="" id="preview" alt="Picture" style="width: 100px; height: 100px"></th>
+        </tr>
+        <tr>
+            <th style="width: 30%; padding: 5px"></th>
+            <th style="height: 30px">
+                <input type="button" value="Add" onclick="add()" style="background-color: greenyellow">
+                <input type="button" value="Save" onclick="save()" style="background-color: yellow">
+            </th>
+        </tr>
+    </table>
+    <table class="right-table" style="border-style: solid">
+        <thead>
+        <tr>
+            <th colspan="8" style="font-size: 25px;">DANH SÁCH HỌC VIÊN</th>
+        </tr>
+        <tr>
+            <th style="width: 7%">ID</th>
+            <th style="width: 25%">Họ tên</th>
+            <th style="width: 15%">Ngày sinh</th>
+            <th style="width: 10%">Giới tính</th>
+            <th style="width: 10%">Lớp</th>
+            <th style="width: 20%">Ảnh</th>
+            <th colspan="2">Tùy chọn</th>
+        </tr>
+        </thead>
+        <tbody id="body"></tbody>
+    </table>
+</div>
+<script src="Students.js"></script>
+<script>
+    let student1 = new Students(111, "Nguyễn Thị Quỳnh Như","15/10/2005", "Nữ", "USSK113","girl1.jpg");
+    let student2 = new Students(112, "Phạm Khánh Phương","07/11/2004", "Nữ", "USSK114","girl2.jpg");
+    let student3 = new Students(113, "Cao Thuỳ Dung","23/08/2006", "Nữ", "USSK114","girl3.jpg");
+   let students = [student1,student2,student3];
+    let editIndex = -1;
+
+    function showStudent(students) {
+        let row ="";
+        for (let i = 0; i < students.length; i++) {
+                row += `<tr>
+                       <th> ${students[i].id} </th>
+                       <th> ${students[i].name} </th>
+                       <th> ${students[i].birthday} </th>
+                       <th> ${students[i].gender} </th>
+                       <th> ${students[i].classroom} </th>
+                       <th> ${students[i].image} </th>
+                       <th><input type="button" value="Delete" onclick="deleteStudent(${i})"></input></th>
+                       <th><input type="button" value="Edit" onclick="editStudent(${i})"></input></th>
+                        </tr>`
+            document.getElementById("body").innerHTML = row;
+        }
+    }
+    showStudent(students);
+
+    function getInputFile() {
+        let file = document.getElementById("inputImage").files;
+        let path = file[0].name;
+        document.getElementById("preview").src = path;
+    }
+    function add() {
+        let newId = document.getElementById("inputID").value;
+        let newName = document.getElementById("inputName").value;
+        let newBirthday = document.getElementById("inputBirthday").value;
+        let newGender = document.getElementById("inputGender").value;
+        let newClassroom = document.getElementById("inputClass").value;
+        let file = document.getElementById("inputImage").files;
+        let path = file[0].name;
+            document.getElementById("preview").src = path;
+        let newImage = document.getElementById("preview").src;
+        let newStudent = new Students(newId,newName,newBirthday,newGender,newClassroom,newImage);
+        students.push(newStudent);
+        document.getElementById("inputID").value = "";
+        document.getElementById("inputName").value = "";
+        document.getElementById("inputBirthday").value = "";
+        document.getElementById("inputGender").value = "";
+        document.getElementById("inputClass").value = "";
+        document.getElementById("inputImage").files = "";
+        showStudent(students);
+        console.log(newImage);
+    }
+
+    function editStudent(i) {
+        editIndex = i;
+        document.getElementById("inputID").value = students[i].id;
+        document.getElementById("inputName").value = students[i].name;
+        document.getElementById("inputBirthday").value = students[i].birthday;
+        document.getElementById("inputGender").value = students[i].gender;
+        document.getElementById("inputClass").value = students[i].classroom;
+        document.getElementById("inputImage").value = students[i].image;
+    }
+
+    function save(i) {
+        if (editIndex >= 0){
+            let newId = document.getElementById("inputID").value;
+            let newName = document.getElementById("inputName").value;
+            let newBirthday = document.getElementById("inputBirthday").value;
+            let newGender = document.getElementById("inputGender").value;
+            let newClassroom = document.getElementById("inputClass").value;
+            let newImage = document.getElementById("inputImage").value;
+            let updateStudent = new Students(newId,newName,newBirthday,newGender,newClassroom,newImage);
+            students[editIndex] = updateStudent;
+            showStudent(students);
+            editIndex =-1;
+        }
+        console.log(students[i]);
+    }
+    function deleteStudent(index) {
+        students.splice(index,1);
+        showStudent(students);
+    }
+</script>
+</body>
+</html>

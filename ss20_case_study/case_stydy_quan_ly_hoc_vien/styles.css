@@ -1,0 +1,17 @@
+.container {
+    display: flex; /*Tạo hiển thị linh hoạt ở 2 bên màn hình*/
+    justify-content: space-between; /*Tạo ra khoảng cách đều giữa các phần tử*/
+    width: 100%; /* Độ rộng bằng 100% màn hình */
+}
+.left-table {
+    width: 30%;
+    background-color: lightcyan;
+    padding: 5px;
+    height: 300px;
+}
+.right-table {
+    width: 50%;
+    background-color: lightcyan;
+    padding: 5px;
+    height: auto;
+}
