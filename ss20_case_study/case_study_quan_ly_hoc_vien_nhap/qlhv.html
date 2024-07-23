@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Học Viên</title>
+    <link rel="stylesheet" href="styleQlhv.css">
+</head>
+<body>
+<img src="https://manager-student.netlify.app/hvhcqg.png" alt="National Academy of Public Administration"
+     style="width: 100%; height: 100px">
+<h1 style="background-color: paleturquoise; padding: 10px; text-align: center; margin: 0px; font-size: 50px">QUẢN LÝ HỌC
+    VIÊN</h1>
+<div class="container">
+    <table class="left-table" border="1">
+        <thead>
+        <tr>
+            <th colspan="2" style="font-size: 20px; background-color: greenyellow; padding: 5px">Thông tin học viên</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th>ID</th>
+            <th><input type="number" id="inputID" style="width: 200px"></th>
+        </tr>
+        <tr>
+            <th>Họ tên</th>
+            <th><input type="text" id="inputName" style="width: 200px"></th>
+        </tr>
+        <tr>
+            <th>Ngày sinh</th>
+            <th><input type="text" id="inputBirthday" style="width: 200px"></th>
+        </tr>
+        <tr>
+            <th>Giới tính</th>
+            <th><input type="text" id="inputGender" style="width: 200px"></th>
+        </tr>
+        <tr>
+            <th>Lớp</th>
+            <th><input type="text" id="inputClass" style="width: 200px"></th>
+        </tr>
+        <tr>
+            <th>Ảnh</th>
+            <th><input type="file" id="inputPicture" style="width: 200px" onchange="getInputFile()">
+                <img src="" id="preview" style="width: 100px; height: 120px;">
+            </th>
+        </tr>
+        <tr>
+            <th></th>
+            <th>
+                <input type="button" onclick="add()" value="Add" style="background-color: yellow">
+                <input type="button" onclick="update()" value="Update" style="background-color: orange">
+            </th>
+        </tr>
+        </tbody>
+    </table>
+
+    <table class="right-table" style="border-style: solid;">
+        <thead>
+        <tr>
+            <th colspan="7" style="font-size: 20px; padding: 5px">DANH SÁCH HỌC VIÊN</th>
+        </tr>
+        <tr>
+            <th style="width: 7%">ID</th>
+            <th>Họ tên</th>
+            <th style="width: 10%">Ngày sinh</th>
+            <th style="width: 10%">Giới tính</th>
+            <th style="width: 10%">Lớp</th>
+            <th style="width: 20%">Ảnh</th>
+            <th style="width: 15%">Tùy chọn</th>
+        </tr>
+        </thead>
+        <tbody id="body"></tbody>
+    </table>
+</div>
+<script src="Student.js"></script>
+<script src="add.js"></script>
+<script src="showStudent.js"></script>
+<script src="getInputFile.js"></script>
+<script src="del.js"></script>
+<script src="edit.js"></script>
+<script src="update.js"></script>
+<script>
+    let student1 = new Student("011", "Phạm Thị Ánh Tuyết", "17/03/2000","Nữ","c0524m1-jv103","<img src='girl3.jpg' style='width: 100px;height: 120px'>")
+    let student2 = new Student("012", "Nguyễn Thị Hạnh", "27/07/1990","Nữ","c0524m1-jv104","<img src='girl2.jpg' style='width: 100px;height: 120px'>")
+    let student3 = new Student("013", "Lưu Vỹ Dạ", "14/04/2004","Nữ","c0524m1-jv105","<img src='girl1.jpg' style='width: 100px;height: 120px'>")
+    let students = [student1,student2,student3];
+    let editIndex = -1;
+    showStudent(students);
+</script>
+</body>
+</html>

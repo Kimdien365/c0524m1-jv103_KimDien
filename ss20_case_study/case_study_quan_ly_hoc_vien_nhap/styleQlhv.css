@@ -1,0 +1,17 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.left-table {
+    background-color: aquamarine;
+    padding: 5px;
+    height: 300px;
+    width: 30%;
+}
+.right-table {
+    background-color: aquamarine;
+    padding: 5px;
+    height: auto;
+    width: 50%;
+}

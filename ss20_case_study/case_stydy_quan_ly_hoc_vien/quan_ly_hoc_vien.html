@@ -36,7 +36,7 @@
         </tr>
         <tr>
             <th style="padding: 5px">Ảnh</th>
-            <th><input type="file" id="inputImage">
+            <th><input type="file" id="inputImage" onchange="getInputFile()">
                 <img src="" id="preview" alt="Picture" style="width: 100px; height: 100px"></th>
         </tr>
         <tr>
@@ -67,16 +67,16 @@
 </div>
 <script src="Students.js"></script>
 <script>
-    let student1 = new Students(111, "Nguyễn Thị Quỳnh Như","15/10/2005", "Nữ", "USSK113","girl1.jpg");
-    let student2 = new Students(112, "Phạm Khánh Phương","07/11/2004", "Nữ", "USSK114","girl2.jpg");
-    let student3 = new Students(113, "Cao Thuỳ Dung","23/08/2006", "Nữ", "USSK114","girl3.jpg");
-   let students = [student1,student2,student3];
+    let student1 = new Students(111, "Nguyễn Thị Quỳnh Như", "15/10/2005", "Nữ", "USSK113", "<img src='girl1.jpg' alt='girl 1 picture' style='height: 100px; width: 100px'>");
+    let student2 = new Students(112, "Phạm Khánh Phương", "07/11/2004", "Nữ", "USSK114", "<img src='girl2.jpg' alt='girl 2 picture' style='height: 100px; width: 100px'>");
+    let student3 = new Students(113, "Cao Thuỳ Dung", "23/08/2006", "Nữ", "USSK114", "<img src='girl3.jpg' alt='girl 3 picture' style='height: 100px; width: 100px'>");
+    let students = [student1, student2, student3];
     let editIndex = -1;
 
     function showStudent(students) {
-        let row ="";
+        let row = "";
         for (let i = 0; i < students.length; i++) {
-                row += `<tr>
+            row += `<tr>
                        <th> ${students[i].id} </th>
                        <th> ${students[i].name} </th>
                        <th> ${students[i].birthday} </th>
@@ -89,6 +89,7 @@
             document.getElementById("body").innerHTML = row;
         }
     }
+
     showStudent(students);
 
     function getInputFile() {
@@ -96,26 +97,28 @@
         let path = file[0].name;
         document.getElementById("preview").src = path;
     }
+
     function add() {
         let newId = document.getElementById("inputID").value;
         let newName = document.getElementById("inputName").value;
         let newBirthday = document.getElementById("inputBirthday").value;
         let newGender = document.getElementById("inputGender").value;
         let newClassroom = document.getElementById("inputClass").value;
-        let file = document.getElementById("inputImage").files;
-        let path = file[0].name;
-            document.getElementById("preview").src = path;
-        let newImage = document.getElementById("preview").src;
-        let newStudent = new Students(newId,newName,newBirthday,newGender,newClassroom,newImage);
+        let files = document.getElementById("inputImage").files;
+        let path = files[0].name;
+        document.getElementById("preview").src = path;
+        let src = document.getElementById("preview").src;
+        let newImage = `<img src='${src}' alt='one picture' style='height: 100px; width: 100px'>`;
+        let newStudent = new Students(newId, newName, newBirthday, newGender, newClassroom, newImage);
         students.push(newStudent);
         document.getElementById("inputID").value = "";
         document.getElementById("inputName").value = "";
         document.getElementById("inputBirthday").value = "";
         document.getElementById("inputGender").value = "";
         document.getElementById("inputClass").value = "";
-        document.getElementById("inputImage").files = "";
+        document.getElementById("inputImage").value = "";
+        document.getElementById("preview").src = "";
         showStudent(students);
-        console.log(newImage);
     }
 
     function editStudent(i) {
@@ -125,26 +128,38 @@
         document.getElementById("inputBirthday").value = students[i].birthday;
         document.getElementById("inputGender").value = students[i].gender;
         document.getElementById("inputClass").value = students[i].classroom;
-        document.getElementById("inputImage").value = students[i].image;
+        let tempDiv = document.createElement("div");
+        tempDiv.innerHTML = students[i].image;
+        let imgElement = tempDiv.querySelector("img");
+        document.getElementById("preview").src = imgElement.src;
     }
 
     function save(i) {
-        if (editIndex >= 0){
+        if (editIndex >= 0) {
             let newId = document.getElementById("inputID").value;
             let newName = document.getElementById("inputName").value;
             let newBirthday = document.getElementById("inputBirthday").value;
             let newGender = document.getElementById("inputGender").value;
             let newClassroom = document.getElementById("inputClass").value;
-            let newImage = document.getElementById("inputImage").value;
-            let updateStudent = new Students(newId,newName,newBirthday,newGender,newClassroom,newImage);
+            let getSrc = document.getElementById("preview").src;
+            let newImage = `<img src='${getSrc}' alt='one picture' style='height: 100px; width: 100px'>`
+            let updateStudent = new Students(newId, newName, newBirthday, newGender, newClassroom, newImage);
             students[editIndex] = updateStudent;
+            document.getElementById("inputID").value = "";
+            document.getElementById("inputName").value = "";
+            document.getElementById("inputBirthday").value = "";
+            document.getElementById("inputGender").value = "";
+            document.getElementById("inputClass").value = "";
+            document.getElementById("inputImage").value = "";
+            document.getElementById("preview").src = "";
             showStudent(students);
-            editIndex =-1;
+            editIndex = -1;
         }
         console.log(students[i]);
     }
+
     function deleteStudent(index) {
-        students.splice(index,1);
+        students.splice(index, 1);
         showStudent(students);
     }
 </script>
