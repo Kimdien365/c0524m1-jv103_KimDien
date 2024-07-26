@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function checkTriangle(x,y,z) {
+        if (x<=0 || y<=0 || z<=0 || x+y <= z || x+z <= y || y+z <= x) {
+            return console.log("x,y,z không phải là cạnh tam giác");
+        } else if (x*x + y*y === z*z || y*y + z*z === x*x || z*z + x*x === y*y) {
+            return console.log("x,y,z là cạnh tam giác vuông");
+        } else {
+           return console.log("x,y,z là cạnh tam giác thường");
+        }
+    }
+    checkTriangle(-4,12,10);
+</script>
+</body>
+</html>

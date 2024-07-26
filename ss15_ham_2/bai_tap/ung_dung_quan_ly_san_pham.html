@@ -17,36 +17,7 @@
 </table>
 <table id="nameProduct"> </table>
 <script>
-    let x = 0;
-    let product = [];
-    function addProduct() {
-        let newProduct = document.getElementById("inputProduct").value;
-        product.push(newProduct);
-        document.getElementById("inputProduct").value = "";
-        displayNewProduct();
-    }
-    function displayNewProduct() {
-        let display = "";
-        for (let i = 0; i < product.length; i++) {
-            display += ` <tr >
-                    <td style="width: 200px"> ${product[i]} </td>
-                    <td><input type="button" onclick="editProduct(${i})" value="Edit"></td>
-                    <td><input type="button" onclick="deleteProduct(${i})" value="Delete"></td>
-               </tr>`
-        }
-        document.getElementById("nameProduct").innerHTML = display;
-        document.getElementById("quantityProduct").innerHTML = product.length + " Product";
-    }
 
-    function editProduct(index) {
-        let editNameProduct = prompt("sửa tên sản phẩm : " + product[index]);
-        product[index] = editNameProduct;
-        displayNewProduct();
-    }
-    function deleteProduct(index) {
-        product.splice(index,1);
-        displayNewProduct();
-    }
 </script>
 </body>
 </html>

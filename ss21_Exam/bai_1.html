@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let n = +prompt("Nhập số phần tử của mảng n<=20");
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt("Nhập phần tử thứ " + i)
+    }
+    alert(arr);
+    let tongSoChan = 0;
+    let tongSoLe = 0;
+    let hieuTongSoChanVaTongSoLe;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 === 0) {
+            tongSoChan += arr[i];
+        } else {
+            tongSoLe += arr[i];
+        }
+    }
+    hieuTongSoChanVaTongSoLe = tongSoChan - tongSoLe;
+    console.log(tongSoChan);
+    console.log(tongSoLe);
+    alert("Hiệu của Tổng các số chẵn và Tổng các số lẻ là: " + hieuTongSoChanVaTongSoLe);
+</script>
+</body>
+</html>

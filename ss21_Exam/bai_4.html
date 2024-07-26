@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        </H2>
+        <th colspan="4" style="height: 30px;"> DANH SÁCH ĐIỆN THOẠI</th>
+    </tr>
+    <tr>
+        <th> ID</th>
+        <th> Name</th>
+        <th> Manufacturer</th>
+        <th> Price</th>
+    </tr>
+    <tr>
+        <th><input id="inputID"></th>
+        <th><input id="inputName"></th>
+        <th><input id="inputManufacturer"></th>
+        <th><input id="inputPrice"></th>
+        <th><input type="button" onclick="add()" value="Thêm"></th>
+    </tr>
+    </thead>
+    <tbody id="body"></tbody>
+</table>
+<script src="Mobile.js"></script>
+<script>
+    function getid() {
+        return this.id;
+    }
+
+    function getName() {
+        return this.name;
+    }
+
+    function getmanufacturer() {
+        return this.manufacturer;
+    }
+
+    function getprice() {
+        return this.price;
+    }
+
+    function setter(id, name, manufacturer, price) {
+        this.id = id;
+        this.name = name;
+        this.manufacturer = manufacturer;
+        this.price = price;
+    }
+    function toString() {
+        return  `Id : ${this.id}, Name: ${this.name}, Manufacturer: ${this.manufacturer}, Price: ${this.price}`;
+    }
+
+    let mobile1 = new Mobile("01", "Iphone", "Apple", "2000.USD");
+    let mobile2 = new Mobile("02", "Sumsung", "Sumsung", "1000.USD");
+    let mobiles = [mobile1, mobile2]
+
+    function showMobile(mobiles) {
+        let row = "";
+        for (let i = 0; i < mobiles.length; i++) {
+            row += `<tr>
+                       <th> ${mobiles[i].id} </th>
+                       <th> ${mobiles[i].name} </th>
+                       <th> ${mobiles[i].manufacturer} </th>
+                       <th> ${mobiles[i].price} </th>
+                        </tr>`
+            document.getElementById("body").innerHTML = row;
+        }
+    }
+    showMobile(mobiles)
+    function add() {
+        let newId = document.getElementById("inputID").value;
+        let newName = document.getElementById("inputName").value;
+        let newManufacturer = document.getElementById("inputManufacturer").value;
+        let newPrice = document.getElementById("inputPrice").value;
+        let newMobile = new Mobile(newId, newName, newManufacturer, newPrice);
+        mobiles.push(newMobile);
+        document.getElementById("inputID").value = "";
+        document.getElementById("inputName").value = "";
+        document.getElementById("inputManufacturer").value = "";
+        document.getElementById("inputPrice").value = "";
+        showMobile(mobiles);
+    }
+
+</script>
+</body>
+</html>

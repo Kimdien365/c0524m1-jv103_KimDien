@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let n = +prompt("Nhập độ dài mảng");
+    let arr = [];
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt("nhập giá trị mảng thứ " + i)
+    }
+    console.log(arr);
+    let test;
+    for (let j=0; j+1<arr.length; j++) {
+        if (arr[j] <= arr[j+1]) {
+           test = "OK";
+        } else {
+            test = "NO";
+            break;
+        }
+    }
+    console.log(test);
+</script>
+</body>
+</html>

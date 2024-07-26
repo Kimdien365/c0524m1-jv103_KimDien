@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr = [];
+    let n = +prompt("Nhập số phần tử của mảng");
+    for (let i = 0; i < n; i++) {
+        arr[i] = +prompt("Nhập số nguyên thứ " + i)
+    }
+    function isPrime(arr) {
+        for ( let j = 0; j<arr.length; j++) {
+            if (arr[j] < 2) {
+                return arr[j].splice(j,1);
+            } else {
+                for (let i = 0; i <= Math.sqrt(arr[i]); i++) {
+                    if (arr[j] % i === 0) {
+                        return arr[j].splice(j,1);
+                    }
+                }
+            }
+            return arr;
+        }
+    }
+</script>
+</body>
+</html>
